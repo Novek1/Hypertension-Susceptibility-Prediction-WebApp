@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd 
 import numpy as np
 import joblib
-st.title('💊🩸 Hypertension Susceptibility Prediction WebApp')
+st.markdown("<h1 style='text-align: center;'>💊🩸 Hypertension Susceptibility Prediction WebApp</h1>", unsafe_allow_html=True)
+
 
 st.info("This web application predicts an individual's risk of developing hypertension using machine learning models. By analyzing key health indicators like age, BMI, blood pressure, glucose levels, and lifestyle factors (e.g., smoking, diabetes, medication use), the app provides an instant risk assessment.")
 
