@@ -42,7 +42,7 @@ if st.button("Predict Hypertension Stage"):
     input_scaled = scaler.transform(user_input)
     
     # Make a prediction
-    prediction = int(model.predict(input_scaled)[0])
+    prediction = model.predict(input_scaled)[0]
 
     
     # Label mapping
