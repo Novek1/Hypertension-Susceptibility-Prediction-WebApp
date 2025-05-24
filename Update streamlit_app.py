@@ -19,7 +19,7 @@ age = st.slider("Age", 1, 100, 30)
 currentSmoker = st.selectbox("Current Smoker? (0 = No, 1 = Yes)", [0, 1])
 cigsPerDay = st.slider("Cigarettes per Day", 0.0, 60.0, 5.0, step=0.1)
 
-BPMeds = st.selectbox("On BP Medication? (0 = No, 1 = Yes)", [0.0, 1.0])
+BPMeds = st.selectbox("On BP Medication? (0 = No, 1 = Yes)", [0, 1])
 diabetes = st.selectbox("Diabetic? (0 = No, 1 = Yes)", [0, 1])
 
 totChol = st.slider("Total Cholesterol (mg/dL)", 100.0, 500.0, 200.0, step=0.1)
@@ -46,5 +46,9 @@ if st.button("Predict Hypertension Stage"):
     
     # Label mapping
     labels = ["Normal", "Elevated", "Stage 1 Hypertension", "Stage 2 Hypertension", "Hypertension Crisis"]
+   if prediction >= 0 and prediction < len(labels):
     st.success(f"Predicted Hypertension Stage: **{labels[prediction]}**")
+   else:
+    st.error("Prediction out of range. Please check model and input data.")
+
 
