@@ -8,5 +8,5 @@ st.info("This web application predicts an individual's risk of developing hypert
 
 df= pd.read_csv("Hypertension_Cleaned (2).csv")
 df=df.drop('Unnamed: 0', axis=1)# delete unwanted index column
-df= df.drop('Risk', axis=1) # delete the binary risk column
+#df= df.drop('Risk', axis=1) # delete the binary risk column
 
