@@ -53,5 +53,5 @@ if st.button("Predict Hypertension Stage"):
     labels = ["Normal", "Elevated", "Stage 1 Hypertension", "Stage 2 Hypertension", "Hypertension Crisis"]
     
     prediction = model.predict(input_scaled)[0]
-    st.success(f"Predicted Hypertension Stage: **{prediction}** (Confidence: {confidence:.2%})")
+    st.success(f"Predicted Hypertension Stage: **{prediction}** Confidence: {confidence:.2%})")
 
