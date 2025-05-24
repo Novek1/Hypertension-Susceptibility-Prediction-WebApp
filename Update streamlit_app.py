@@ -38,15 +38,11 @@ if st.button("Predict Hypertension Stage"):
                                        'heartRate', 'glucose'])
 
     input_scaled = scaler.transform(user_input)
-    prediction = int(model.predict(input_scaled)[0])  # <-- cast to int
+    prediction = model.predict(input_scaled)[0]  # this is a string like "Stage 1 Hypertension"
     probs = model.predict_proba(input_scaled)[0]
     confidence = np.max(probs)
 
-    labels = ["Normal", "Elevated", "Stage 1 Hypertension", "Stage 2 Hypertension", "Hypertension Crisis"]
+    st.success(f"Predicted Hypertension Stage: **{prediction}**")
+    st.success(f"Prediction Confidence: **{confidence:.2%}**")
+    st.info(f"Model Accuracy: **{model_accuracy:.2%}**")
 
-    if 0 <= prediction < len(labels):
-        st.success(f"Predicted Hypertension Stage: **{labels[prediction]}**")
-        st.success(f"Prediction Confidence: **{confidence:.2%}**")
-        st.info(f"Model Accuracy: **{model_accuracy:.2%}**")
-    else:
-        st.error("Prediction out of range. Please check model and input data.")
