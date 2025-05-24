@@ -17,7 +17,7 @@ scaler = joblib.load("scaler.pkl")
 male = st.selectbox("Gender (0: Female, 1: Male)", [0, 1])
 age = st.slider("Age", 1, 100, 30)
 
-currentSmoker = st.selectbox("Current Smoker? (0 = No, 1 = Yes)", [0, 1])
+currentSmoker = st.selectbox("Current Smoker? (0 = No, 1 = Yes)", [0.0, 1.0])
 cigsPerDay = st.slider("Cigarettes per Day", 0.0, 60.0, 5.0, step=1.0)
 
 BPMeds = st.selectbox("On BP Medication? (0 = No, 1 = Yes)", [0, 1])
