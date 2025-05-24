@@ -16,16 +16,19 @@ st.title("Hypertension Stage Predictor")
 
 male = st.selectbox("Gender (0: Female, 1: Male)", [0, 1])
 age = st.slider("Age", 1, 100, 30)
+
 currentSmoker = st.selectbox("Current Smoker? (0 = No, 1 = Yes)", [0, 1])
-cigsPerDay = st.slider("Cigarettes per Day", 0.0, 60.0, 5.0)
+cigsPerDay = st.slider("Cigarettes per Day", 0.0, 60.0, 5.0, step=0.1)
+
 BPMeds = st.selectbox("On BP Medication? (0 = No, 1 = Yes)", [0.0, 1.0])
 diabetes = st.selectbox("Diabetic? (0 = No, 1 = Yes)", [0, 1])
-totChol = st.slider("Total Cholesterol", 100.0, 500.0, 200.0)
-sysBP = st.slider("Systolic BP", 90.0, 250.0, 120.0)
-diaBP = st.slider("Diastolic BP", 60.0, 150.0, 80.0)
-BMI = st.slider("Body Mass Index", 10.0, 50.0, 25.0)
-heartRate = st.slider("Heart Rate", 40.0, 150.0, 75.0)
-glucose = st.slider("Glucose Level", 50.0, 300.0, 100.0)
+
+totChol = st.slider("Total Cholesterol (mg/dL)", 100.0, 500.0, 200.0, step=0.1)
+sysBP = st.slider("Systolic BP (mmHg)", 90.0, 250.0, 120.0, step=0.5)
+diaBP = st.slider("Diastolic BP (mmHg)", 60.0, 150.0, 80.0, step=0.5)
+BMI = st.slider("Body Mass Index (BMI)", 10.0, 50.0, 25.0, step=0.1)
+heartRate = st.slider("Heart Rate (bpm)", 40.0, 150.0, 75.0, step=1.0)
+glucose = st.slider("Glucose Level (mg/dL)", 50.0, 300.0, 100.0, step=0.1)
 
 if st.button("Predict Hypertension Stage"):
     # Input formatting
@@ -38,7 +41,7 @@ if st.button("Predict Hypertension Stage"):
     # Scale input
     input_scaled = scaler.transform(user_input)
     
-    # Make prediction
+    # Make a prediction
     prediction = int(model.predict(input_scaled)[0])
 
     
