@@ -1,25 +1,12 @@
-# 📦 Streamlit App Starter Kit 
-```
-⬆️ (Replace above with your app's name)
-```
+# 💊🩸 Hypertension Susceptibility Prediction WebApp by Kevon Bvunza
 
-Description of the app ...
+This web application predicts an individual's risk of developing hypertension using machine learning models. By analyzing key health indicators like age, BMI, blood pressure, glucose levels, and lifestyle factors (e.g., smoking, diabetes, medication use), the app provides an instant risk assessment. It's designed to support early intervention and raise awareness about hypertension susceptibility through data-driven insights.
 
 ## Demo App
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://app-starter-kit.streamlit.app/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://HypPredict.streamlit.app/)
 
 ## GitHub Codespaces
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/app-starter-kit?quickstart=1)
 
-## Section Heading
-
-This is filler text, please replace this with text for this section.
-
-## Further Reading
-
-This is filler text, please replace this with a explanatory text about further relevant resources for this repo
-- Resource 1
-- Resource 2
-- Resource 3
