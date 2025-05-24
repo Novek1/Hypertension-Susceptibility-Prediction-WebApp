@@ -44,11 +44,14 @@ if st.button("Predict Hypertension Stage"):
     # Make a prediction
     prediction = model.predict(input_scaled)[0]
 
+    # Predict probabilities
+    probs = model.predict_proba(input_scaled)[0]
+    confidence = np.max(probs)
 
-    
+
     # Label mapping
     labels = ["Normal", "Elevated", "Stage 1 Hypertension", "Stage 2 Hypertension", "Hypertension Crisis"]
     
     prediction = model.predict(input_scaled)[0]
-    st.success(f"Predicted Hypertension Stage: **{prediction}**")
+    st.success(f"Predicted Hypertension Stage: **{labels[prediction]}** (Confidence: {confidence:.2%})")
 
