@@ -44,3 +44,6 @@ if st.button("Predict Hypertension Stage"):
     # Label mapping
     labels = ["Normal", "Elevated", "Stage 1 Hypertension", "Stage 2 Hypertension", "Hypertension Crisis"]
     st.success(f"Predicted Hypertension Stage: **{labels[prediction]}**")
+
+streamlit run app.py
+
