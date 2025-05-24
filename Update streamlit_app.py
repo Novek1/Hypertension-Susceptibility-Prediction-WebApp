@@ -11,8 +11,6 @@ st.info("This web application predicts an individual's risk of developing hypert
 model = joblib.load("svm_model.pkl")
 scaler = joblib.load("scaler.pkl")
 
-# Define feature inputs
-st.title("Hypertension Stage Predictor")
 
 male = st.selectbox("Gender (0: Female, 1: Male)", [0, 1])
 age = st.slider("Age", 1, 100, 30)
