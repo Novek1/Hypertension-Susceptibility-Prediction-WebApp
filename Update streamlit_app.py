@@ -48,10 +48,15 @@ if st.button("Predict Hypertension Stage"):
     probs = model.predict_proba(input_scaled)[0]
     confidence = np.max(probs)
 
-
     # Label mapping
     labels = ["Normal", "Elevated", "Stage 1 Hypertension", "Stage 2 Hypertension", "Hypertension Crisis"]
+
+    
     
     prediction = model.predict(input_scaled)[0]
-    st.success(f"Predicted Hypertension Stage: **{labels[prediction]}** (Confidence: {confidence:.2%})")
+    if prediction >= 0 and prediction < len(labels):
+        st.success(f"Predicted Hypertension Stage: **{labels[prediction]}** (Confidence: {confidence:.2%})")
+    
+    else:
+        st.error("Prediction out of range. Please check model and input data.")
 
