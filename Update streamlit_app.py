@@ -38,7 +38,7 @@ if st.button("Predict Hypertension Stage"):
                                        'heartRate', 'glucose'])
 
     input_scaled = scaler.transform(user_input)
-    prediction = model.predict(input_scaled)[0]
+    prediction = int(model.predict(input_scaled)[0])  # <-- cast to int
     probs = model.predict_proba(input_scaled)[0]
     confidence = np.max(probs)
 
