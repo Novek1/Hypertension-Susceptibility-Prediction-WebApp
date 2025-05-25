@@ -12,8 +12,8 @@ st.write("Please enter the patient's information and medical measurements below:
 model = joblib.load("svm_model.pkl")
 scaler = joblib.load("scaler.pkl")
 
-# (Optional) hardcoded or loaded model accuracy
-model_accuracy = 0.87  # change this if you have a different one
+# Accuracy input
+model_accuracy = 0.89
 
 # Input form
 male = st.selectbox("Gender (0: Female, 1: Male)", [0, 1])
@@ -38,7 +38,7 @@ if st.button("Predict Hypertension Stage"):
                                        'heartRate', 'glucose'])
 
     input_scaled = scaler.transform(user_input)
-    prediction = model.predict(input_scaled)[0]  # this is a string like "Stage 1 Hypertension"
+    prediction = model.predict(input_scaled)[0]  
     probs = model.predict_proba(input_scaled)[0]
     confidence = np.max(probs)
 
