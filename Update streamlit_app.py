@@ -5,7 +5,7 @@ import joblib
 
 # Title and description
 st.markdown("<h1 style='text-align: center;'>💊🩸 Hypertension Susceptibility Prediction WebApp</h1>", unsafe_allow_html=True)
-st.info("This web application predicts an individual's risk of developing hypertension using machine learning models. By analyzing key health indicators like age, BMI, blood pressure, glucose levels, and lifestyle factors (e.g., smoking, diabetes, medication use), the app provides an instant risk assessment.")
+st.info("This web application predicts an individual's susceptibility to hypertension using machine learning models. By analyzing key health indicators like age, BMI, blood pressure, glucose levels, and lifestyle factors (e.g., smoking, diabetes, medication use), the app provides an instant risk assessment.")
 st.write("Please enter the patient's information and medical measurements below:")
 
 # Load model and scaler
